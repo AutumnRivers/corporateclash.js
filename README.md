@@ -1,5 +1,7 @@
 # CorporateClash.JS
-Node.JS module to read Toontown: Corporate Clash's [public API](https://github.com/CorporateClash/api-docs).
+Node.JS module to read Toontown: Corporate Clash's [public API](https://apidocs.corporateclash.net/).
+
+(NOTE: The above API documentation is incomplete! For information on how the News endpoint works, read [the old documentation](https://github.com/CorporateClash/api-docs/) for now.)
 
 ---
 
@@ -24,7 +26,8 @@ const { Districts } = require('corporateclash');
 
 Usage:
 ```js
-const districts = new Districts();
+// Optionally, when creating an instance, you can set the user agent that's sent to the API. If left blank, it uses 'CorporateClash.JS/<CorporateClash.JS Version>'
+const districts = new Districts("YourAppName/X.X.X");
 
 // Districts need to have the raw district entries retrieved before you can use programmer-friendly versions.
 // Since everything is a promise, we'll use an async function to do our dirty work.
@@ -74,6 +77,7 @@ const { News } = require('corporateclash');
 
 Usage:
 ```js
+// Optionally, when creating an instance, you can set the user agent that's sent to the API. If left blank, it uses 'CorporateClash.JS/<CorporateClash.JS Version>'
 const news = new News();
 
 // News entries work *very* similar to Districts. There's no modification, however, and typically you'll want the whole object.

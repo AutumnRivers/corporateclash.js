@@ -1,6 +1,6 @@
 const clash = require('./index');
 
-const districts = new clash.Districts();
+const districts = new clash.Districts("CorporateClash.JS Example/1.0.1");
 
 // Districts need to have the raw district entries retrieved before you can use programmer-friendly versions.
 // Since everything is a promise, we'll use an async function to do our dirty work.
@@ -38,7 +38,7 @@ const parseDistricts = async () => {
 
 parseDistricts();
 
-const news = new clash.News();
+const news = new clash.News("CorporateClash.JS Example/1.0.1");
 
 // News entries work *very* similar to Districts. There's no modification, however, and typically you'll want the whole object.
 // Do note that the public API only shows the LAST FIVE ENTRIES. No, I don't know why.

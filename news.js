@@ -38,10 +38,11 @@ class NewsEntry {
  */
 class News {
     /** @lends News.prototype */
-    constructor() {
+    constructor(customUserAgent) {
         /** @constructs */
         this.rawList = [];
         this.newsList = [];
+        this.agent = customUserAgent || "CorporateClash.JS/1.0.1";
     }
 
     /**
@@ -56,7 +57,11 @@ class News {
         let entries = '';
 
         return new Promise(resolve => {
-            https.get(newsURL, res => {
+            https.get(newsURL, {
+                headers: {
+                    'User-Agent': this.agent
+                }
+            }, res => {
                 res.on('data', data => {
                     entries += data;
                 });

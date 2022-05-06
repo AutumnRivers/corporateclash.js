@@ -1,10 +1,14 @@
 {
   "name": "corporateclash",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.JS module for interacting with Toontown: Corporate Clash's (Public) API",
   "main": "index.js",
   "author": "Autumn Rivers",
   "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AutumnRivers/corporateclash.js.git"
+  },
   "devDependencies": {}
 }

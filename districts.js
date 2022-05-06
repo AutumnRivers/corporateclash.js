@@ -99,10 +99,11 @@ class District {
  */
 class Districts {
     /** @lends Districts.prototype */
-    constructor() {
+    constructor(customUserAgent) {
         /** @constructs */
         this.rawList = [];
         this.objList = [];
+        this.agent = customUserAgent || "CorporateClash.JS/1.0.1";
     }
 
     /**
@@ -118,7 +119,11 @@ class Districts {
         let districts = '';
 
         return new Promise(resolve => {
-            https.get(districtsURL, res => {
+            https.get(districtsURL, {
+                headers: {
+                    'User-Agent': this.agent
+                }
+            }, res => {
                 res.on('data', data => {
                     districts += data;
                 });
